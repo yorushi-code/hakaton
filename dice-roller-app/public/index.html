@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Генератор бросков кубиков</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="landing-page">
+    <nav class="navbar">
+        <div class="nav-brand">🎲 Dice Roller</div>
+        <a href="about.html" class="nav-link">Об авторах</a>
+    </nav>
+
+    <div class="landing-container">
+        <h1 class="landing-title">Генератор бросков кубиков</h1>
+        <p class="landing-subtitle">Для настольных игр с мультиплеером</p>
+
+        <div class="mode-selection">
+            <div class="mode-card" id="soloMode">
+                <div class="mode-icon">🎲</div>
+                <h3>Одиночная игра</h3>
+                <p>Бросайте кубики самостоятельно</p>
+            </div>
+
+            <div class="mode-card" id="multiplayerMode">
+                <div class="mode-icon">👥</div>
+                <h3>Мультиплеер</h3>
+                <p>Создайте комнату или присоединитесь</p>
+            </div>
+        </div>
+
+        <div id="multiplayerModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2>Мультиплеер</h2>
+                
+                <div class="input-group">
+                    <label>Ваше имя:</label>
+                    <input type="text" id="playerName" placeholder="Введите ваше имя" maxlength="20">
+                </div>
+
+                <div class="multiplayer-options">
+                    <button id="createRoomBtn" class="btn btn-primary">
+                        Создать комнату
+                    </button>
+                    
+                    <div class="divider">или</div>
+                    
+                    <div class="input-group">
+                        <label>Код комнаты:</label>
+                        <input type="text" id="roomCodeInput" placeholder="Введите код" maxlength="6">
+                    </div>
+                    <button id="joinRoomBtn" class="btn btn-secondary">
+                        Присоединиться
+                    </button>
+                </div>
+
+                <div id="errorMessage" class="error-message"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Загрузка скриптов -->
+     <script src="js/theme-manager.js"></script>
+    <script src="js/socket-manager.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
